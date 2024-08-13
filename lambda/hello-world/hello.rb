@@ -14,7 +14,7 @@ module LambdaFunctions
         headers: {
           'Content-Type' => 'text/plain'
         },
-        body: "Hello, #{name}!",
+        body: "Hello, #{name}! How are you?",
       }
     end
   end
