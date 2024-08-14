@@ -21,21 +21,6 @@ deployment "development" {
   }
 }
 
-orchestrate "auto_approve" "no_s3_changes" {
-  check {
-    # Check that the lambda component has no changes
-    reason = "Changes proposed to s3 component."
-    condition = context.plan.component_changes["component.s3"].total == 0
-  }
-}
-
-orchestrate "auto_approve" "no_lambda_changes" {
-  check {
-    # Check that the lambda component has no changes
-    reason = "Changes proposed to lambda component."
-    condition = context.plan.component_changes["component.lambda"].total == 0
-  }
-}
 
 deployment "production" {
   inputs = {
