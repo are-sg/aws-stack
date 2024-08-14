@@ -24,6 +24,7 @@ deployment "development" {
 orchestrate "auto_approve" "no_lambda_changes" {
   check {
     # Check that the lambda component has no changes
+    reason = "Testing"
     condition = context.plan.component_changes["component.lambda"].total == 0
     error_message = "Changes proposed to lambda component."
   }
